@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <dev class="floor">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+        </ul>
+    </dev>
+    <dev class="akijypuhou">
+        <ul class="F">
+            <li>空き状況</li>
+            <li>空き状況</li>
+            <li>空き状況</li>
+            <li>空き状況</li>
+            <li>空き状況</li>
+        </ul>
+        <ul class="F">
+            <li>空き状況</li>
+            <li>空き状況</li>
+            <li>空き状況</li>
+            <li>空き状況</li>
+            <li>空き状況</li>
+        </ul>
+        <p id="test">テスト</p>
+    </dev>
+    <script>
+    let url = 'http://localhost:8888/api/get/1';
+function Reroad_Api(){
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      let Data_Json = data;
+      //Data_Json = Data_Json['lock'];
+      console.log(Data_Json.lock);
+      document.getElementById('test').textContent = (Data_Json.lock);
+    });}
+    setInterval("Reroad_Api()", 1000);
+</script>
+</body>
+
+</html>
