@@ -17,7 +17,7 @@ app.use(express.json());
 //https.createServer(options, app).listen(443);
 //console.log("サーバーが起動しました");
 
-app.listen(8888,console.log("サーバーが開始!!!"));
+app.listen(process.env.PORT || 8888,console.log("サーバーが開始!!!"));
 //クライアントに送る処理(テンプレ)
 app.get("/",(req,res) =>{
     //app.use(express.static('Web'))
